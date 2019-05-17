@@ -6,7 +6,7 @@ try {
 	(function() {
 		'use strict';
 		
-		window.load = [];
+		window.load = {};
 
 		/**
 		 * @name callback
