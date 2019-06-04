@@ -17,15 +17,13 @@ try {
 			//배열일 때
 			if(load) {
 				for(var i in load) {
-					var loadI = load[i];
+					var element = load[i];
 
 					//함수일 때
-					if(typeof loadI === 'function') {
-						loadI(event);
+					if(typeof element === 'function') {
+						element(event);
 					}					
 				}
-
-				load = undefined;
 			}	
 		}
 		
