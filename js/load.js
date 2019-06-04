@@ -3,10 +3,20 @@
  * @version 1.0.0
  */
 try {
-	(function() {
+	(function(_toString) {
 		'use strict';
 		
 		window.load = {};
+
+		/**
+		 * @name isArray
+		 * @since 2017-12-06
+		 * @param {*} value
+		 * @return {boolean}
+		 */
+		function _isArray(value) {
+			return _toString.call(value) === '[object Array]';
+		}
 
 		/**
 		 * @name callback
@@ -15,8 +25,8 @@ try {
 		 */
 		function _callback(event) {
 			//배열일 때
-			if(load) {
-				for(var i in load) {
+			if(_isArray(load)) {
+				for(var i = 0, loadLength = load.length; i < loadLength; i++) {
 					var element = load[i];
 
 					//함수일 때
@@ -40,7 +50,7 @@ try {
 			});
 		}
 
-	})();
+	})(Object.prototype.toString);
 }catch(e) {
 	console.error(e);
 }
