@@ -3,9 +3,11 @@
  * @version 1.0.0
  */
 try {
-	(function(_toString) {
+	(function() {
 		'use strict';
 		
+		var _toString = Object.prototype.toString;
+
 		window.load = {};
 
 		/**
@@ -50,7 +52,7 @@ try {
 			});
 		}
 
-	})(Object.prototype.toString);
+	})();
 }catch(e) {
 	console.error(e);
 }
