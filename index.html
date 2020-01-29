@@ -7,9 +7,9 @@
 	<title>load</title>
 	<script src="js/load.min.js"></script>
 	<script>
-		load[0] = function(event) {
+		load.push(function(event) {
 			console.log(document.readyState);
-		};
+		});
 	</script>
 </head>
 <body>
